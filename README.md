@@ -1,6 +1,9 @@
 # SquareMap Banner Mod
 
-![preview](https://raw.githubusercontent.com/FaeWulf/squaremap_banner/images/preview.png)
+<p align="center" >
+  <img alt="preview" src="https://raw.githubusercontent.com/FaeWulf/squaremap_banner/master/images/preview.png" />
+</p>
+
 
 A fabric mod that is an extension for the [SquareMap](https://github.com/jpenilla/squaremap) mod for Minecraft Fabric.
 It adds
@@ -15,7 +18,9 @@ by [squaremap-banners plugins](https://github.com/jpenilla/squaremap-addons/tree
   remove it from the world map.
 - **Area Notification**: Displays a message when entering an area marked by a banner.
 
-![preview 2](https://raw.githubusercontent.com/FaeWulf/squaremap_banner/images/preview_extra.png)
+<p align="center">
+  <img alt="preview_extra" src="https://raw.githubusercontent.com/FaeWulf/squaremap_banner/master/images/preview_extra.png" />
+</p>
 
 ## Configuration
 
