@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "squaremap-banner",
+  "version": "${version}",
+  "name": "Squaremap-banner",
+  "description": "A fabric mod that is an extension for the SquareMap mod for Minecraft Fabric. It adds additional functionality related to banners within the game. Inspired by squaremap-banners plugins",
+  "authors": [
+    "Me!"
+  ],
+  "contact": {
+    "homepage": "https://faewulf.xyz",
+    "sources": "https://github.com/FaeWulf/squaremap_banner"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/squaremap-banner/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "faewulf.squaremap.banner.Squaremapbanner"
+    ],
+    "client": [
+      "faewulf.squaremap.banner.SquaremapbannerClient"
+    ]
+  },
+  "mixins": [
+    "squaremap-banner.mixins.json",
+    {
+      "config": "squaremap-banner.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.11",
+    "minecraft": "~1.20.6",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
