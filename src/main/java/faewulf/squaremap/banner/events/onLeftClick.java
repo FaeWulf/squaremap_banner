@@ -11,7 +11,7 @@ public class onLeftClick {
     public static void load() {
         AttackBlockCallback.EVENT.register(((player, world, hand, pos, direction) -> {
 
-            if (!Permissions.check(player, faewulf.squaremap.banner.dataType.Permissions.USE))
+            if (!Permissions.check(player, faewulf.squaremap.banner.dataType.Permissions.USE, 1))
                 return ActionResult.PASS;
 
             if (!world.isClient) {

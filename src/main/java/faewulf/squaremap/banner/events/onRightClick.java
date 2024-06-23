@@ -11,7 +11,7 @@ public class onRightClick {
     public static void load() {
         UseBlockCallback.EVENT.register(((player, world, hand, hitResult) -> {
 
-            if (!Permissions.check(player, faewulf.squaremap.banner.dataType.Permissions.USE))
+            if (!Permissions.check(player, faewulf.squaremap.banner.dataType.Permissions.USE, 1))
                 return ActionResult.PASS;
 
             if (!world.isClient) {

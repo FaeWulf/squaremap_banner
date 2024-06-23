@@ -12,6 +12,8 @@ public class Squaremapbanner implements ModInitializer {
 
     public static ModConfigs modConfigs;
 
+    public static String MODID = "squaremap-banner";
+
     @Override
     public void onInitialize() {
         LOGGER.info("Cool! Now loading modules and events...");
