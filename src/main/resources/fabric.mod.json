@@ -9,7 +9,8 @@
   ],
   "contact": {
     "homepage": "https://faewulf.xyz",
-    "sources": "https://github.com/FaeWulf/squaremap_banner"
+    "sources": "https://github.com/FaeWulf/squaremap_banner",
+    "issues": "https://github.com/FaeWulf/squaremap_banner/issues"
   },
   "license": "CC0-1.0",
   "icon": "assets/squaremap-banner/icon.png",
