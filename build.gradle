@@ -39,7 +39,7 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
     //squaremap api
-    compileOnly "xyz.jpenilla:squaremap-api:1.2.3"
+    compileOnly "xyz.jpenilla:squaremap-api:1.2.5"
 
     //permission handler
     include(modImplementation('me.lucko:fabric-permissions-api:0.3.1'))
