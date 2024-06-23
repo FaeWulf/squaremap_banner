@@ -10,7 +10,7 @@ It adds
 additional functionality related to banners within the game. Inspired
 by [squaremap-banners plugins](https://github.com/jpenilla/squaremap-addons/tree/master/addons/banners)
 
-## Features
+## ✨Features
 
 - **Banner marker**: Sneaking right-click with a named banner while holding a filled map will add that banner to the
   world map.
@@ -22,7 +22,7 @@ by [squaremap-banners plugins](https://github.com/jpenilla/squaremap-addons/tree
   <img alt="preview_extra" src="https://raw.githubusercontent.com/FaeWulf/squaremap_banner/master/images/preview_extra.png" />
 </p>
 
-## Configuration
+## ⚙️Configuration
 
 The mod provides a JSON configuration file with the following options:
 
@@ -30,15 +30,17 @@ The mod provides a JSON configuration file with the following options:
 - `announce_when_near_banner`: Enable/disable the message when entering the banner's area.
 - `blacklist`: Contains a list of words to prevent from being registered to the world map.
 
-## Mod dependents
+## ⚠️Mod dependents
 
 - Squaremap mod itself
+- Fabric API
 
-## Permissions
+## 🪧Permissions
 
 - **squaremap.banner.use**: Permission required for players to use the features provided by the mod.
+- If non permission manager mod installed, then only players with permission level 1 and above can use the mod.
 
-## Support and Feedback
+## 👍Support and Feedback
 
 If you encounter any issues or have suggestions for improvement, please feel free to submit an issue on the GitHub
 repository.

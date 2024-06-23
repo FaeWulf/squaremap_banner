@@ -8,7 +8,6 @@ import xyz.jpenilla.squaremap.api.SquaremapProvider;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -32,7 +31,7 @@ public class icon {
     public static final Key YELLOW = register("YELLOW");
 
     private static Key register(String name) {
-        String filename = "icons" + File.separator + name + ".png";
+        String filename = "assets/squaremap-banner/textures/icons/" + name + ".png";
         Key key = Key.of(name);
 
         BufferedImage image = getBufferImage(filename);
@@ -72,7 +71,6 @@ public class icon {
             return null;
         }
     }
-
 
     public static TextColor getTextColor(DyeColor type) {
         return switch (type) {
