@@ -40,7 +40,7 @@ public class bannerRegister {
             });
 
             if (badWord.get() != null) {
-                player.sendMessage(Text.of("This banner's name contains a blacklist word: \"" + badWord.get() + "\", please rename it and try again"));
+                player.sendMessage(Text.of("This banner's name contains a blacklist word: \"" + badWord.get() + "\", please rename it and try again"), true);
                 return;
             }
 

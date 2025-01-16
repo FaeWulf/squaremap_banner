@@ -9,6 +9,7 @@ import net.minecraft.util.ActionResult;
 
 public class onRightClick {
     public static void load() {
+
         UseBlockCallback.EVENT.register(((player, world, hand, hitResult) -> {
 
             if (!Permissions.check(player, faewulf.squaremap.banner.dataType.Permissions.USE, 1))
