@@ -36,8 +36,8 @@ public class bannerTitle {
         if (worldObj == null)
             return;
 
-        long playerX = (long) player.getPos().getX();
-        long playerZ = (long) player.getPos().getZ();
+        long playerX = (long) player.getEntityPos().getX();
+        long playerZ = (long) player.getEntityPos().getZ();
 
         //banner title radius
         int radius = modConfigs.radius;

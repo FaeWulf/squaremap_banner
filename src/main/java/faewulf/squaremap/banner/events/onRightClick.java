@@ -14,7 +14,7 @@ public class onRightClick {
             if (!Permissions.check(player, faewulf.squaremap.banner.dataType.Permissions.USE, 1))
                 return ActionResult.PASS;
 
-            if (!world.isClient) {
+            if (!world.isClient()) {
 
                 //if not holding filled map
                 if (player.getStackInHand(hand).getItem() != Items.FILLED_MAP)
