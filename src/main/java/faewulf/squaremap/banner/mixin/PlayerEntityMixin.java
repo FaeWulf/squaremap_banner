@@ -31,12 +31,12 @@ public class PlayerEntityMixin {
         delayTick = 0;
 
         PlayerEntity player = (PlayerEntity) (Object) this;
-        Vec3d currentPos = player.getPos();
+        Vec3d currentPos = player.getEntityPos();
 
         if (lastPos != null && !currentPos.equals(lastPos)) {
             // Player has moved
             //System.out.println("Player moved: " + player.getName().getString() + " to position " + currentPos);
-            bannerTitle.check(player.getWorld(), player);
+            bannerTitle.check(player.getEntityWorld(), player);
         }
 
         // Update last position

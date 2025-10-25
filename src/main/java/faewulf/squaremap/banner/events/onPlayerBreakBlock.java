@@ -10,7 +10,7 @@ public class onPlayerBreakBlock {
 
     public static void load() {
         PlayerBlockBreakEvents.AFTER.register(((world, player, pos, state, blockEntity) -> {
-            if (!world.isClient) {
+            if (!world.isClient()) {
                 //if a banner
                 if (blockEntity instanceof BannerBlockEntity bannerEntity) {
                     if (bannerEntity.getCustomName() == null)
