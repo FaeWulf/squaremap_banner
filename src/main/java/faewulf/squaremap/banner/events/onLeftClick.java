@@ -4,31 +4,31 @@ import faewulf.squaremap.banner.utils.bannerManager;
 import faewulf.squaremap.banner.utils.bannerRegister;
 import me.lucko.fabric.api.permissions.v0.Permissions;
 import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
-import net.minecraft.item.Items;
-import net.minecraft.util.ActionResult;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.item.Items;
 
 public class onLeftClick {
     public static void load() {
         AttackBlockCallback.EVENT.register(((player, world, hand, pos, direction) -> {
 
             if (!Permissions.check(player, faewulf.squaremap.banner.dataType.Permissions.USE, 1))
-                return ActionResult.PASS;
+                return InteractionResult.PASS;
 
-            if (!world.isClient()) {
+            if (!world.isClientSide()) {
 
                 //if not holding filled map
-                if (player.getStackInHand(hand).getItem() != Items.FILLED_MAP)
-                    return ActionResult.PASS;
+                if (player.getItemInHand(hand).getItem() != Items.FILLED_MAP)
+                    return InteractionResult.PASS;
 
                 //if not sneaking
-                if (!player.isSneaking())
-                    return ActionResult.PASS;
+                if (!player.isShiftKeyDown())
+                    return InteractionResult.PASS;
 
                 bannerRegister.tryRemoveBanner(world, pos);
 
                 bannerManager.save();
             }
-            return ActionResult.PASS;
+            return InteractionResult.PASS;
         }));
     }
 }

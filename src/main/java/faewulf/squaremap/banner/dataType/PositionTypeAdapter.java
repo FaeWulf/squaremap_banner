@@ -3,9 +3,8 @@ package faewulf.squaremap.banner.dataType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import net.minecraft.util.math.BlockPos;
-
 import java.io.IOException;
+import net.minecraft.core.BlockPos;
 
 // Custom TypeAdapter for Data record
 public class PositionTypeAdapter extends TypeAdapter<Position> {

@@ -1,8 +1,8 @@
 package faewulf.squaremap.banner.dataType;
 
-import net.minecraft.block.entity.BannerBlockEntity;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BannerBlockEntity;
 import xyz.jpenilla.squaremap.api.Point;
 
 public record Position(BlockPos loc) {
@@ -14,7 +14,7 @@ public record Position(BlockPos loc) {
         return Point.of(this.loc.getX(), this.loc.getZ());
     }
 
-    public boolean isBanner(World world) {
+    public boolean isBanner(Level world) {
         return world.getBlockEntity(loc) instanceof BannerBlockEntity;
     }
 }

@@ -1,8 +1,8 @@
 package faewulf.squaremap.banner.mixin;
 
 import faewulf.squaremap.banner.modules.bannerTitle;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -11,15 +11,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import static faewulf.squaremap.banner.Squaremapbanner.modConfigs;
 
-@Mixin(PlayerEntity.class)
+@Mixin(Player.class)
 public class PlayerEntityMixin {
     @Unique
-    private Vec3d lastPos;
+    private Vec3 lastPos;
 
     @Unique
     private int delayTick = 0;
 
-    @Inject(at = @At("TAIL"), method = "tickMovement")
+    @Inject(at = @At("TAIL"), method = "aiStep")
     private void tickMovementMixin(CallbackInfo cif) {
 
         if (!modConfigs.bannerEnterAnnouncer)
@@ -30,13 +30,13 @@ public class PlayerEntityMixin {
             return;
         delayTick = 0;
 
-        PlayerEntity player = (PlayerEntity) (Object) this;
-        Vec3d currentPos = player.getEntityPos();
+        Player player = (Player) (Object) this;
+        Vec3 currentPos = player.position();
 
         if (lastPos != null && !currentPos.equals(lastPos)) {
             // Player has moved
             //System.out.println("Player moved: " + player.getName().getString() + " to position " + currentPos);
-            bannerTitle.check(player.getEntityWorld(), player);
+            bannerTitle.check(player.level(), player);
         }
 
         // Update last position

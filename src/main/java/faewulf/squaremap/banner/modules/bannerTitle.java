@@ -4,30 +4,29 @@ import faewulf.squaremap.banner.dataType.Data;
 import faewulf.squaremap.banner.dataType.icon;
 import faewulf.squaremap.banner.utils.bannerManager;
 import faewulf.squaremap.banner.utils.world;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.text.Text;
-import net.minecraft.text.TextColor;
-import net.minecraft.util.DyeColor;
-import net.minecraft.world.World;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextColor;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.Level;
 
 import static faewulf.squaremap.banner.Squaremapbanner.modConfigs;
 
 public class bannerTitle {
 
-    public static Map<PlayerEntity, String> playerList = new HashMap<>();
+    public static Map<Player, String> playerList = new HashMap<>();
 
 
-    public static void check(World playerWorld, PlayerEntity player) {
+    public static void check(Level playerWorld, Player player) {
 
-        if (playerWorld.isClient())
+        if (playerWorld.isClientSide())
             return;
 
         //get world id
-        String worldId = playerWorld.getRegistryKey().getValue().toString();
+        String worldId = playerWorld.dimension().identifier().toString();
 
         //get worldObj from bannerManager
         world worldObj = bannerManager.bannerManager.get(worldId);
@@ -36,8 +35,8 @@ public class bannerTitle {
         if (worldObj == null)
             return;
 
-        long playerX = (long) player.getEntityPos().getX();
-        long playerZ = (long) player.getEntityPos().getZ();
+        long playerX = (long) player.position().x();
+        long playerZ = (long) player.position().z();
 
         //banner title radius
         int radius = modConfigs.radius;
@@ -84,12 +83,12 @@ public class bannerTitle {
                 String bannerName = selectedBannerData.get().name();
                 TextColor color = icon.getTextColor(DyeColor.valueOf(selectedBannerData.get().keyIconType().getKey()));
                 //then sendMessage
-                Text sendString = Text.literal("Entering ")
+                Component sendString = Component.literal("Entering ")
                         .append(
-                                Text.literal(bannerName).styled(style -> style.withColor(color))
+                                Component.literal(bannerName).withStyle(style -> style.withColor(color))
                         );
 
-                player.sendMessage(sendString, true);
+                player.sendOverlayMessage(sendString);
             }
         }
     }

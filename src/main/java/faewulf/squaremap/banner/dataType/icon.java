@@ -1,12 +1,12 @@
 package faewulf.squaremap.banner.dataType;
 
 import faewulf.squaremap.banner.Squaremapbanner;
-import net.minecraft.text.TextColor;
-import net.minecraft.util.DyeColor;
 import xyz.jpenilla.squaremap.api.Key;
 import xyz.jpenilla.squaremap.api.SquaremapProvider;
 
 import javax.imageio.ImageIO;
+import net.minecraft.network.chat.TextColor;
+import net.minecraft.world.item.DyeColor;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
