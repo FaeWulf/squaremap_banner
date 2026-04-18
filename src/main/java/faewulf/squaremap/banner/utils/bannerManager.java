@@ -3,14 +3,13 @@ package faewulf.squaremap.banner.utils;
 import com.google.common.collect.Maps;
 import faewulf.squaremap.banner.Squaremapbanner;
 import faewulf.squaremap.banner.dataType.icon;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.DyeColor;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.World;
-
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.Level;
 import java.util.Map;
 
 
@@ -39,8 +38,8 @@ public class bannerManager {
 
                     try {
                         //obtain server world
-                        RegistryKey<World> worldKey = RegistryKey.of(RegistryKeys.WORLD, Identifier.tryParse(world.identifier));
-                        ServerWorld serverWorld = server.getWorld(worldKey);
+                        ResourceKey<Level> worldKey = ResourceKey.create(Registries.DIMENSION, Identifier.tryParse(world.identifier));
+                        ServerLevel serverWorld = server.getLevel(worldKey);
 
                         if (serverWorld != null && !position.isBanner(serverWorld))
                             return;
