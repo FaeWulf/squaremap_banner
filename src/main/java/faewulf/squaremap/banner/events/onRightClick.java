@@ -7,11 +7,13 @@ import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.item.Items;
 import net.minecraft.util.ActionResult;
 
+import static faewulf.squaremap.banner.Squaremapbanner.modConfigs;
+
 public class onRightClick {
     public static void load() {
         UseBlockCallback.EVENT.register(((player, world, hand, hitResult) -> {
 
-            if (!Permissions.check(player, faewulf.squaremap.banner.dataType.Permissions.USE, 1))
+            if (!Permissions.check(player, faewulf.squaremap.banner.dataType.Permissions.USE, modConfigs.permissionLevel))
                 return ActionResult.PASS;
 
             if (!world.isClient()) {

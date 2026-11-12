@@ -29,6 +29,7 @@ The mod provides a JSON configuration file with the following options:
 - `radius`: Specifies the size of the area declared by the banner.
 - `announce_when_near_banner`: Enable/disable the message when entering the banner's area.
 - `blacklist`: Contains a list of words to prevent from being registered to the world map.
+- `permission_level`: Minimum permission level needed to add/remove banner markers when no permission manager mod is installed. Defaults to `1` (op only).
 
 ## ⚠️Mod dependents
 
@@ -38,7 +39,7 @@ The mod provides a JSON configuration file with the following options:
 ## 🪧Permissions
 
 - **squaremap.banner.use**: Permission required for players to use the features provided by the mod.
-- If non permission manager mod installed, then only players with permission level 1 and above can use the mod.
+- If no permission manager mod is installed, then only players with permission at least the config file level (`permission_level`, defaults to 1) and above can use the mod.
 
 ## 👍Support and Feedback
 
