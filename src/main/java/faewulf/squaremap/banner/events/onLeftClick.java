@@ -7,11 +7,13 @@ import net.fabricmc.fabric.api.event.player.AttackBlockCallback;
 import net.minecraft.item.Items;
 import net.minecraft.util.ActionResult;
 
+import static faewulf.squaremap.banner.Squaremapbanner.modConfigs;
+
 public class onLeftClick {
     public static void load() {
         AttackBlockCallback.EVENT.register(((player, world, hand, pos, direction) -> {
 
-            if (!Permissions.check(player, faewulf.squaremap.banner.dataType.Permissions.USE, 1))
+            if (!Permissions.check(player, faewulf.squaremap.banner.dataType.Permissions.USE, modConfigs.permissionLevel))
                 return ActionResult.PASS;
 
             if (!world.isClient()) {

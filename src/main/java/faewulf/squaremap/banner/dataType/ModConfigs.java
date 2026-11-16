@@ -12,5 +12,8 @@ public class ModConfigs {
     @SerializedName("announce_when_near_banner")
     public boolean bannerEnterAnnouncer = true;
 
+    @SerializedName("permission_level")
+    public int permissionLevel = 1;
+
     public HashSet<String> blacklist = new HashSet<>(Arrays.asList("nigga", "slut"));
 }
